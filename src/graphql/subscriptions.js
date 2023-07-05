@@ -1,36 +1,75 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateTodo = /* GraphQL */ `
-  subscription OnCreateTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onCreateTodo(filter: $filter) {
+export const onCreateMBTI = /* GraphQL */ `
+  subscription OnCreateMBTI($filter: ModelSubscriptionMBTIFilterInput) {
+    onCreateMBTI(filter: $filter) {
       id
-      name
-      description
+      mbti
+      type
+      mind
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onUpdateTodo = /* GraphQL */ `
-  subscription OnUpdateTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onUpdateTodo(filter: $filter) {
+export const onUpdateMBTI = /* GraphQL */ `
+  subscription OnUpdateMBTI($filter: ModelSubscriptionMBTIFilterInput) {
+    onUpdateMBTI(filter: $filter) {
       id
-      name
-      description
+      mbti
+      type
+      mind
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onDeleteTodo = /* GraphQL */ `
-  subscription OnDeleteTodo($filter: ModelSubscriptionTodoFilterInput) {
-    onDeleteTodo(filter: $filter) {
+export const onDeleteMBTI = /* GraphQL */ `
+  subscription OnDeleteMBTI($filter: ModelSubscriptionMBTIFilterInput) {
+    onDeleteMBTI(filter: $filter) {
       id
-      name
-      description
+      mbti
+      type
+      mind
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onCreateInput = /* GraphQL */ `
+  subscription OnCreateInput($filter: ModelSubscriptionInputFilterInput) {
+    onCreateInput(filter: $filter) {
+      id
+      question
+      answer
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateInput = /* GraphQL */ `
+  subscription OnUpdateInput($filter: ModelSubscriptionInputFilterInput) {
+    onUpdateInput(filter: $filter) {
+      id
+      question
+      answer
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteInput = /* GraphQL */ `
+  subscription OnDeleteInput($filter: ModelSubscriptionInputFilterInput) {
+    onDeleteInput(filter: $filter) {
+      id
+      question
+      answer
       createdAt
       updatedAt
       __typename

@@ -2,5 +2,5 @@
   "AppSyncApiName": "mymbti",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-07-05T05:48:04.514Z"
+  "AuthModeLastUpdated": "2023-07-05T06:57:19.421Z"
 }
