@@ -9,7 +9,26 @@
       "UnauthRoleName": "amplify-mymbti-dev-20303-unauthRole",
       "StackName": "amplify-mymbti-dev-20303",
       "StackId": "arn:aws:cloudformation:ap-northeast-2:709182149749:stack/amplify-mymbti-dev-20303/a40c30b0-1a8c-11ee-85ba-06a9b502e872",
-      "AmplifyAppId": "d2rpmm7aionnph"
+      "AmplifyAppId": "d2rpmm7aionnph",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-mymbti-dev-20303-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "myAuth": {}
+      },
+      "api": {
+        "mymbti": {}
+      },
+      "storage": {
+        "InputDB": {},
+        "MbtiDB": {}
+      },
+      "function": {
+        "myLambda": {
+          "deploymentBucketName": "amplify-mymbti-dev-20303-deployment",
+          "s3Key": "amplify-builds/myLambda-676c79784e7664347179-build.zip"
+        }
+      }
     }
   }
 }

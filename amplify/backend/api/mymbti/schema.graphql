@@ -1,0 +1,13 @@
+type MBTI @model @auth(rules: [{allow: public}, {allow: public, provider: iam}]) {
+  id: ID!
+  mbti: String
+  type: String
+  mind: String
+}
+
+type Input @model @auth(rules: [{allow: public}, {allow: public, provider: iam}]) {
+  id: ID!
+  question: String
+  answer: String
+}
+ 

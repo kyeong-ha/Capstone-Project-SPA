@@ -1,0 +1,10 @@
+{
+  "resourceName": "InputDB",
+  "tableName": "InputDB",
+  "partitionKey": {
+    "fieldName": "id",
+    "fieldType": "number"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}
