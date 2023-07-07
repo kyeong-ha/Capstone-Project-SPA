@@ -13,6 +13,9 @@ export const createMBTI = /* GraphQL */ `
       mind
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -29,6 +32,9 @@ export const updateMBTI = /* GraphQL */ `
       mind
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -45,6 +51,9 @@ export const deleteMBTI = /* GraphQL */ `
       mind
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -60,6 +69,9 @@ export const createInput = /* GraphQL */ `
       answer
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -75,6 +87,9 @@ export const updateInput = /* GraphQL */ `
       answer
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }
@@ -90,6 +105,9 @@ export const deleteInput = /* GraphQL */ `
       answer
       createdAt
       updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
   }

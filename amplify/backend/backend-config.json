@@ -52,67 +52,7 @@
       "service": "Cognito"
     }
   },
-  "function": {
-    "myLambda": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput",
-            "GraphQLAPIKeyOutput"
-          ],
-          "category": "api",
-          "resourceName": "mymbti"
-        },
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "myAuth"
-        },
-        {
-          "attributes": [
-            "Name",
-            "Arn",
-            "StreamArn"
-          ],
-          "category": "storage",
-          "resourceName": "InputDB"
-        },
-        {
-          "attributes": [
-            "Name",
-            "Arn",
-            "StreamArn"
-          ],
-          "category": "storage",
-          "resourceName": "MbtiDB"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_myLambda_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "myLambda"
-        }
-      ]
-    },
-    "AMPLIFY_function_myLambda_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "myLambda"
-        }
-      ]
-    }
-  },
+  "function": {},
   "storage": {
     "InputDB": {
       "providerPlugin": "awscloudformation",

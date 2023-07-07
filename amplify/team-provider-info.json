@@ -22,12 +22,6 @@
       "storage": {
         "InputDB": {},
         "MbtiDB": {}
-      },
-      "function": {
-        "myLambda": {
-          "deploymentBucketName": "amplify-mymbti-dev-20303-deployment",
-          "s3Key": "amplify-builds/myLambda-676c79784e7664347179-build.zip"
-        }
       }
     }
   }

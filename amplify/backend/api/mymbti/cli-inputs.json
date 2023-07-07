@@ -9,7 +9,11 @@
       "apiKeyExpirationDate": "2024-07-04T06:57:36.399Z",
       "keyDescription": "api key description"
     },
-    "conflictResolution": {},
+    "conflictResolution": {
+      "defaultResolutionStrategy": {
+        "type": "AUTOMERGE"
+      }
+    },
     "additionalAuthTypes": [
       {
         "mode": "AWS_IAM"
