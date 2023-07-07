@@ -1,4 +1,4 @@
-<script setup src="./models/question_predefine.js"></script>
+<script src="./models/question_predefine.js"></script>
 <template>
   <div id="app">
     <h1>TEST App</h1>

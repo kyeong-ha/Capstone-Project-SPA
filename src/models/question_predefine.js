@@ -1,5 +1,5 @@
-import { API, Amplify, DataStore } from "aws-amplify";
-import amplifyConfig from "./aws-exports";
+import { DataStore } from "aws-amplify";
+// import amplifyConfig from "./aws-exports";
 
 const questions = [
     `At a party, would you rather spend most of the time talking to a few close friends or mingle with many different people?`,
@@ -14,21 +14,18 @@ const questions = [
     `In your free time, are you more drawn to learning practical skills, like woodworking or gardening, or exploring abstract concepts and ideas, like philosophy or advanced mathematics?`
 ];
 
-Amplify.configure(amplifyConfig);
+// Amplify.configure(amplifyConfig);
 
-export default {
-    for(let i=1; i<=10; i++){
-        try {
+// function* question_init() {
+    // for(let i=1; i<=10; i++){
             const input = await DataStore.save(
                 new Input({
-                    id: i,
-                    question: questions[i-1],
+                    id: '1',
+                    question: questions[0],
                     answer: ''
                 })
             );
-            console.log('Post saved successfully!', input);
-        } catch (error) {
-            console.log('Error saving post', error);
-        }
-    }
-}
+// };
+
+// const init = question_initialized
+export default input;
