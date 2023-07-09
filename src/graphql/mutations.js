@@ -65,6 +65,7 @@ export const createInput = /* GraphQL */ `
   ) {
     createInput(input: $input, condition: $condition) {
       id
+      qId
       answer
       question
       createdAt
@@ -83,6 +84,7 @@ export const updateInput = /* GraphQL */ `
   ) {
     updateInput(input: $input, condition: $condition) {
       id
+      qId
       answer
       question
       createdAt
@@ -101,6 +103,7 @@ export const deleteInput = /* GraphQL */ `
   ) {
     deleteInput(input: $input, condition: $condition) {
       id
+      qId
       answer
       question
       createdAt

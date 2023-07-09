@@ -53,6 +53,7 @@ export const onCreateInput = /* GraphQL */ `
   subscription OnCreateInput($filter: ModelSubscriptionInputFilterInput) {
     onCreateInput(filter: $filter) {
       id
+      qId
       answer
       question
       createdAt
@@ -68,6 +69,7 @@ export const onUpdateInput = /* GraphQL */ `
   subscription OnUpdateInput($filter: ModelSubscriptionInputFilterInput) {
     onUpdateInput(filter: $filter) {
       id
+      qId
       answer
       question
       createdAt
@@ -83,6 +85,7 @@ export const onDeleteInput = /* GraphQL */ `
   subscription OnDeleteInput($filter: ModelSubscriptionInputFilterInput) {
     onDeleteInput(filter: $filter) {
       id
+      qId
       answer
       question
       createdAt

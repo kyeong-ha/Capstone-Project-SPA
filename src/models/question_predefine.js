@@ -9,6 +9,7 @@ async function createOrUpdateQuestion(init_id, init_question) {
         const input = await DataStore.save(
             new Input({
                 id: init_id.toString(),
+                qId: init_id,
                 question: init_question,
                 answer: ''
             })

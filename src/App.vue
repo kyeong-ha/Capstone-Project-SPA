@@ -10,10 +10,10 @@
 </template>
 
 <script>
-  import * as Mutation from './graphql/mutations';
-  import * as Query from './graphql/querys';
-  import * as Subscription from './graphql/subscriptions';
-  import { initQuestion } from './models/question_predefine'
+  // import * as Mutation from './graphql/mutations';
+  // import * as Query from './graphql/querys';
+  // import * as Subscription from './graphql/subscriptions';
+  import { createOrUpdateQuestion } from './models/question_predefine'
   
   const questions = [
       `At a party, would you rather spend most of the time talking to a few close friends or mingle with many different people?`,
@@ -29,7 +29,7 @@
   ];
 
   for (var i = 1; i <= 10; i++) {
-    initQuestion(i, questions[i-1]);
+    createOrUpdateQuestion(i, questions[i-1]);
   }
 </script>
 

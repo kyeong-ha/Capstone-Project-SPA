@@ -10,26 +10,15 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "mbti": {
-                    "name": "mbti",
-                    "isArray": false,
-                    "type": "String",
+                "mbtis": {
+                    "name": "mbtis",
+                    "isArray": true,
+                    "type": {
+                        "nonModel": "MbtiForm"
+                    },
                     "isRequired": false,
-                    "attributes": []
-                },
-                "type": {
-                    "name": "type",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "mind": {
-                    "name": "mind",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isArrayNullable": true
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -93,19 +82,15 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "answer": {
-                    "name": "answer",
-                    "isArray": false,
-                    "type": "String",
+                "inputs": {
+                    "name": "inputs",
+                    "isArray": true,
+                    "type": {
+                        "nonModel": "InputForm"
+                    },
                     "isRequired": false,
-                    "attributes": []
-                },
-                "question": {
-                    "name": "question",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
+                    "attributes": [],
+                    "isArrayNullable": true
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -161,7 +146,53 @@ export const schema = {
         }
     },
     "enums": {},
-    "nonModels": {},
+    "nonModels": {
+        "MbtiForm": {
+            "name": "MbtiForm",
+            "fields": {
+                "mbti": {
+                    "name": "mbti",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "type": {
+                    "name": "type",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "mind": {
+                    "name": "mind",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        },
+        "InputForm": {
+            "name": "InputForm",
+            "fields": {
+                "question": {
+                    "name": "question",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "answer": {
+                    "name": "answer",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                }
+            }
+        }
+    },
     "codegenVersion": "3.4.4",
-    "version": "0fa3597b1b89b9c051f87bce768bb7ed"
+    "version": "1302e7fa9f637799c54fa736f5c5ed73"
 };

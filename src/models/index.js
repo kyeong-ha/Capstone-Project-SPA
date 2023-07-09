@@ -4,9 +4,11 @@ import { schema } from './schema';
 
 
 
-const { MBTI, Input } = initSchema(schema);
+const { MBTI, Input, MbtiForm, InputForm } = initSchema(schema);
 
 export {
   MBTI,
-  Input
+  Input,
+  MbtiForm,
+  InputForm
 };

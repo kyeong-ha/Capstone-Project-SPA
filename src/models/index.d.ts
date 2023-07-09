@@ -4,7 +4,35 @@ import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
 
 
+type EagerMbtiForm = {
+  readonly mbti?: string | null;
+  readonly type?: string | null;
+  readonly mind?: string | null;
+}
 
+type LazyMbtiForm = {
+  readonly mbti?: string | null;
+  readonly type?: string | null;
+  readonly mind?: string | null;
+}
+
+export declare type MbtiForm = LazyLoading extends LazyLoadingDisabled ? EagerMbtiForm : LazyMbtiForm
+
+export declare const MbtiForm: (new (init: ModelInit<MbtiForm>) => MbtiForm)
+
+type EagerInputForm = {
+  readonly question?: string | null;
+  readonly answer?: string | null;
+}
+
+type LazyInputForm = {
+  readonly question?: string | null;
+  readonly answer?: string | null;
+}
+
+export declare type InputForm = LazyLoading extends LazyLoadingDisabled ? EagerInputForm : LazyInputForm
+
+export declare const InputForm: (new (init: ModelInit<InputForm>) => InputForm)
 
 type EagerMBTI = {
   readonly [__modelMeta__]: {
@@ -12,9 +40,7 @@ type EagerMBTI = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly mbti?: string | null;
-  readonly type?: string | null;
-  readonly mind?: string | null;
+  readonly mbtis?: (MbtiForm | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -25,9 +51,7 @@ type LazyMBTI = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly mbti?: string | null;
-  readonly type?: string | null;
-  readonly mind?: string | null;
+  readonly mbtis?: (MbtiForm | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -44,8 +68,7 @@ type EagerInput = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly answer?: string | null;
-  readonly question?: string | null;
+  readonly inputs?: (InputForm | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -56,8 +79,7 @@ type LazyInput = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly answer?: string | null;
-  readonly question?: string | null;
+  readonly inputs?: (InputForm | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
