@@ -77,8 +77,8 @@ export const getInput = /* GraphQL */ `
   query GetInput($id: ID!) {
     getInput(id: $id) {
       id
-      question
       answer
+      question
       createdAt
       updatedAt
       _version
@@ -97,8 +97,8 @@ export const listInputs = /* GraphQL */ `
     listInputs(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        question
         answer
+        question
         createdAt
         updatedAt
         _version
@@ -127,8 +127,8 @@ export const syncInputs = /* GraphQL */ `
     ) {
       items {
         id
-        question
         answer
+        question
         createdAt
         updatedAt
         _version

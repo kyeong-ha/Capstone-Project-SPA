@@ -65,8 +65,8 @@ export const createInput = /* GraphQL */ `
   ) {
     createInput(input: $input, condition: $condition) {
       id
-      question
       answer
+      question
       createdAt
       updatedAt
       _version
@@ -83,8 +83,8 @@ export const updateInput = /* GraphQL */ `
   ) {
     updateInput(input: $input, condition: $condition) {
       id
-      question
       answer
+      question
       createdAt
       updatedAt
       _version
@@ -101,8 +101,8 @@ export const deleteInput = /* GraphQL */ `
   ) {
     deleteInput(input: $input, condition: $condition) {
       id
-      question
       answer
+      question
       createdAt
       updatedAt
       _version

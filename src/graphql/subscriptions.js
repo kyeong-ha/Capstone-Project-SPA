@@ -53,8 +53,8 @@ export const onCreateInput = /* GraphQL */ `
   subscription OnCreateInput($filter: ModelSubscriptionInputFilterInput) {
     onCreateInput(filter: $filter) {
       id
-      question
       answer
+      question
       createdAt
       updatedAt
       _version
@@ -68,8 +68,8 @@ export const onUpdateInput = /* GraphQL */ `
   subscription OnUpdateInput($filter: ModelSubscriptionInputFilterInput) {
     onUpdateInput(filter: $filter) {
       id
-      question
       answer
+      question
       createdAt
       updatedAt
       _version
@@ -83,8 +83,8 @@ export const onDeleteInput = /* GraphQL */ `
   subscription OnDeleteInput($filter: ModelSubscriptionInputFilterInput) {
     onDeleteInput(filter: $filter) {
       id
-      question
       answer
+      question
       createdAt
       updatedAt
       _version

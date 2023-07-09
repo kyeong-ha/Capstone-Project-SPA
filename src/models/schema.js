@@ -93,15 +93,15 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "question": {
-                    "name": "question",
+                "answer": {
+                    "name": "answer",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "answer": {
-                    "name": "answer",
+                "question": {
+                    "name": "question",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,

@@ -7,7 +7,6 @@ type MBTI @model @auth(rules: [{allow: public}, {allow: public, provider: iam}])
 
 type Input @model @auth(rules: [{allow: public}, {allow: public, provider: iam}]) {
   id: ID!
-  question: String
   answer: String
+  question: String
 }
- 

@@ -44,8 +44,8 @@ type EagerInput = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly question?: string | null;
   readonly answer?: string | null;
+  readonly question?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -56,8 +56,8 @@ type LazyInput = {
     readOnlyFields: 'createdAt' | 'updatedAt';
   };
   readonly id: string;
-  readonly question?: string | null;
   readonly answer?: string | null;
+  readonly question?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
