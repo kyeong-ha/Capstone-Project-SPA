@@ -2,13 +2,32 @@
 import { initSchema } from '@aws-amplify/datastore';
 import { schema } from './schema';
 
+const ModelAttributeTypes = {
+  "NULL": "_null",
+  "BINARY": "binary",
+  "BINARY_SET": "binarySet",
+  "BOOL": "bool",
+  "LIST": "list",
+  "MAP": "map",
+  "NUMBER": "number",
+  "NUMBER_SET": "numberSet",
+  "STRING": "string",
+  "STRING_SET": "stringSet"
+};
 
+const ModelSortDirection = {
+  "ASC": "ASC",
+  "DESC": "DESC"
+};
 
-const { MBTI, Input, MbtiForm, InputForm } = initSchema(schema);
+const { Input, MBTI, ModelInputConnection, ModelMBTIConnection, resultBool } = initSchema(schema);
 
 export {
-  MBTI,
+  ModelAttributeTypes,
+  ModelSortDirection,
   Input,
-  MbtiForm,
-  InputForm
+  MBTI,
+  ModelInputConnection,
+  ModelMBTIConnection,
+  resultBool
 };

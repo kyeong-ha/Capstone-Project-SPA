@@ -1,91 +1,120 @@
-import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-amplify/datastore";
+import { ModelInit, MutableModel } from "@aws-amplify/datastore";
 // @ts-ignore
 import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
 
-
-
-type EagerMbtiForm = {
-  readonly mbti?: string | null;
-  readonly type?: string | null;
-  readonly mind?: string | null;
+export enum ModelAttributeTypes {
+  NULL = "_null",
+  BINARY = "binary",
+  BINARY_SET = "binarySet",
+  BOOL = "bool",
+  LIST = "list",
+  MAP = "map",
+  NUMBER = "number",
+  NUMBER_SET = "numberSet",
+  STRING = "string",
+  STRING_SET = "stringSet"
 }
 
-type LazyMbtiForm = {
-  readonly mbti?: string | null;
-  readonly type?: string | null;
-  readonly mind?: string | null;
-}
-
-export declare type MbtiForm = LazyLoading extends LazyLoadingDisabled ? EagerMbtiForm : LazyMbtiForm
-
-export declare const MbtiForm: (new (init: ModelInit<MbtiForm>) => MbtiForm)
-
-type EagerInputForm = {
-  readonly question?: string | null;
-  readonly answer?: string | null;
-}
-
-type LazyInputForm = {
-  readonly question?: string | null;
-  readonly answer?: string | null;
-}
-
-export declare type InputForm = LazyLoading extends LazyLoadingDisabled ? EagerInputForm : LazyInputForm
-
-export declare const InputForm: (new (init: ModelInit<InputForm>) => InputForm)
-
-type EagerMBTI = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<MBTI, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
-  readonly id: string;
-  readonly mbtis?: (MbtiForm | null)[] | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-}
-
-type LazyMBTI = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<MBTI, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
-  readonly id: string;
-  readonly mbtis?: (MbtiForm | null)[] | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
-}
-
-export declare type MBTI = LazyLoading extends LazyLoadingDisabled ? EagerMBTI : LazyMBTI
-
-export declare const MBTI: (new (init: ModelInit<MBTI>) => MBTI) & {
-  copyOf(source: MBTI, mutator: (draft: MutableModel<MBTI>) => MutableModel<MBTI> | void): MBTI;
+export enum ModelSortDirection {
+  ASC = "ASC",
+  DESC = "DESC"
 }
 
 type EagerInput = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Input, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
+  readonly _deleted?: boolean | null;
+  readonly _lastChangedAt: number;
+  readonly _version: number;
+  readonly answer?: string | null;
+  readonly createdAt: string;
   readonly id: string;
-  readonly inputs?: (InputForm | null)[] | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
+  readonly question?: string | null;
+  readonly updatedAt: string;
 }
 
 type LazyInput = {
-  readonly [__modelMeta__]: {
-    identifier: ManagedIdentifier<Input, 'id'>;
-    readOnlyFields: 'createdAt' | 'updatedAt';
-  };
+  readonly _deleted?: boolean | null;
+  readonly _lastChangedAt: number;
+  readonly _version: number;
+  readonly answer?: string | null;
+  readonly createdAt: string;
   readonly id: string;
-  readonly inputs?: (InputForm | null)[] | null;
-  readonly createdAt?: string | null;
-  readonly updatedAt?: string | null;
+  readonly question?: string | null;
+  readonly updatedAt: string;
 }
 
 export declare type Input = LazyLoading extends LazyLoadingDisabled ? EagerInput : LazyInput
 
-export declare const Input: (new (init: ModelInit<Input>) => Input) & {
-  copyOf(source: Input, mutator: (draft: MutableModel<Input>) => MutableModel<Input> | void): Input;
+export declare const Input: (new (init: ModelInit<Input>) => Input)
+
+type EagerMBTI = {
+  readonly _deleted?: boolean | null;
+  readonly _lastChangedAt: number;
+  readonly _version: number;
+  readonly createdAt: string;
+  readonly id: string;
+  readonly mbti: string;
+  readonly mind?: string | null;
+  readonly type?: string | null;
+  readonly updatedAt: string;
 }
+
+type LazyMBTI = {
+  readonly _deleted?: boolean | null;
+  readonly _lastChangedAt: number;
+  readonly _version: number;
+  readonly createdAt: string;
+  readonly id: string;
+  readonly mbti: string;
+  readonly mind?: string | null;
+  readonly type?: string | null;
+  readonly updatedAt: string;
+}
+
+export declare type MBTI = LazyLoading extends LazyLoadingDisabled ? EagerMBTI : LazyMBTI
+
+export declare const MBTI: (new (init: ModelInit<MBTI>) => MBTI)
+
+type EagerModelInputConnection = {
+  readonly items: (Input | null)[];
+  readonly nextToken?: string | null;
+  readonly startedAt?: number | null;
+}
+
+type LazyModelInputConnection = {
+  readonly items: (Input | null)[];
+  readonly nextToken?: string | null;
+  readonly startedAt?: number | null;
+}
+
+export declare type ModelInputConnection = LazyLoading extends LazyLoadingDisabled ? EagerModelInputConnection : LazyModelInputConnection
+
+export declare const ModelInputConnection: (new (init: ModelInit<ModelInputConnection>) => ModelInputConnection)
+
+type EagerModelMBTIConnection = {
+  readonly items: (MBTI | null)[];
+  readonly nextToken?: string | null;
+  readonly startedAt?: number | null;
+}
+
+type LazyModelMBTIConnection = {
+  readonly items: (MBTI | null)[];
+  readonly nextToken?: string | null;
+  readonly startedAt?: number | null;
+}
+
+export declare type ModelMBTIConnection = LazyLoading extends LazyLoadingDisabled ? EagerModelMBTIConnection : LazyModelMBTIConnection
+
+export declare const ModelMBTIConnection: (new (init: ModelInit<ModelMBTIConnection>) => ModelMBTIConnection)
+
+type EagerresultBool = {
+  readonly success: boolean;
+}
+
+type LazyresultBool = {
+  readonly success: boolean;
+}
+
+export declare type resultBool = LazyLoading extends LazyLoadingDisabled ? EagerresultBool : LazyresultBool
+
+export declare const resultBool: (new (init: ModelInit<resultBool>) => resultBool)
+
