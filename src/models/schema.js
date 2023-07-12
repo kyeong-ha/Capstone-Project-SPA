@@ -1,122 +1,8 @@
 export const schema = {
-    "models": {},
-    "enums": {
-        "ModelAttributeTypes": {
-            "name": "ModelAttributeTypes",
-            "values": [
-                "_null",
-                "binary",
-                "binarySet",
-                "bool",
-                "list",
-                "map",
-                "number",
-                "numberSet",
-                "string",
-                "stringSet"
-            ]
-        },
-        "ModelSortDirection": {
-            "name": "ModelSortDirection",
-            "values": [
-                "ASC",
-                "DESC"
-            ]
-        }
-    },
-    "nonModels": {
-        "Input": {
-            "name": "Input",
-            "fields": {
-                "_deleted": {
-                    "name": "_deleted",
-                    "isArray": false,
-                    "type": "Boolean",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "_lastChangedAt": {
-                    "name": "_lastChangedAt",
-                    "isArray": false,
-                    "type": "AWSTimestamp",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "_version": {
-                    "name": "_version",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "answer": {
-                    "name": "answer",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "question": {
-                    "name": "question",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "updatedAt": {
-                    "name": "updatedAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": true,
-                    "attributes": []
-                }
-            }
-        },
+    "models": {
         "MBTI": {
             "name": "MBTI",
             "fields": {
-                "_deleted": {
-                    "name": "_deleted",
-                    "isArray": false,
-                    "type": "Boolean",
-                    "isRequired": false,
-                    "attributes": []
-                },
-                "_lastChangedAt": {
-                    "name": "_lastChangedAt",
-                    "isArray": false,
-                    "type": "AWSTimestamp",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "_version": {
-                    "name": "_version",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "AWSDateTime",
-                    "isRequired": true,
-                    "attributes": []
-                },
                 "id": {
                     "name": "id",
                     "isArray": false,
@@ -145,86 +31,133 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
                 "updatedAt": {
                     "name": "updatedAt",
                     "isArray": false,
                     "type": "AWSDateTime",
-                    "isRequired": true,
-                    "attributes": []
-                }
-            }
-        },
-        "ModelInputConnection": {
-            "name": "ModelInputConnection",
-            "fields": {
-                "items": {
-                    "name": "items",
-                    "isArray": true,
-                    "type": {
-                        "nonModel": "Input"
-                    },
                     "isRequired": false,
                     "attributes": [],
-                    "isArrayNullable": false
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "MBTIS",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
                 },
-                "nextToken": {
-                    "name": "nextToken",
+                {
+                    "type": "aws_api_key",
+                    "properties": {}
+                },
+                {
+                    "type": "aws_iam",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "Input": {
+            "name": "Input",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "question": {
+                    "name": "question",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "startedAt": {
-                    "name": "startedAt",
-                    "isArray": false,
-                    "type": "AWSTimestamp",
-                    "isRequired": false,
-                    "attributes": []
-                }
-            }
-        },
-        "ModelMBTIConnection": {
-            "name": "ModelMBTIConnection",
-            "fields": {
-                "items": {
-                    "name": "items",
-                    "isArray": true,
-                    "type": {
-                        "nonModel": "MBTI"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": false
-                },
-                "nextToken": {
-                    "name": "nextToken",
+                "answer": {
+                    "name": "answer",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
-                "startedAt": {
-                    "name": "startedAt",
+                "createdAt": {
+                    "name": "createdAt",
                     "isArray": false,
-                    "type": "AWSTimestamp",
+                    "type": "AWSDateTime",
                     "isRequired": false,
-                    "attributes": []
-                }
-            }
-        },
-        "resultBool": {
-            "name": "resultBool",
-            "fields": {
-                "success": {
-                    "name": "success",
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
                     "isArray": false,
-                    "type": "Boolean",
-                    "isRequired": true,
-                    "attributes": []
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
                 }
-            }
+            },
+            "syncable": true,
+            "pluralName": "Inputs",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "aws_api_key",
+                    "properties": {}
+                },
+                {
+                    "type": "aws_iam",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     },
+    "enums": {},
+    "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "b0d471f79f738620ee299ffebfad59f2"
+    "version": "9d60f5261fa5d9d76d00878b0adfe84d"
 };

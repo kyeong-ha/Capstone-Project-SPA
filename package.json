@@ -12,6 +12,7 @@
         "amplify-push": "node amplify/scripts/amplify-push.js"
     },
     "dependencies": {
+        "@aws-amplify/api": "^5.3.3",
         "@aws-amplify/datastore": "^4.6.3",
         "@aws-amplify/ui-vue": "^3.1.20",
         "@aws-cdk/aws-appsync": "^1.204.0",

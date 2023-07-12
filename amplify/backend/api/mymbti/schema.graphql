@@ -1,18 +1,19 @@
-type MBTI @model {
+# schema {
+#   query: Query
+#   mutation: Mutation
+# }
+
+type MBTI @model @aws_api_key @aws_iam @auth(rules: [{ allow: public }]){
     id: ID!
     mbti: String!
     mind: String
     type: String
 }
 
-type Input @model{
+type Input @model @aws_api_key @aws_iam @auth(rules: [{ allow: public }]){
     id: ID!
     question: String
     answer: String
-}
-
-type InputResult {
-    isSucceeded: Boolean!
 }
 
 input InputArgs {
