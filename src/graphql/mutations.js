@@ -113,8 +113,11 @@ export const deleteInput = /* GraphQL */ `
   }
 `;
 export const createOrUpdateInput = /* GraphQL */ `
-  mutation CreateOrUpdateInput($input: InputArgs!) {
-    createOrUpdateInput(input: $input) {
+  mutation CreateOrUpdateInput(
+    $input: InputArgs!
+    $condition: ModelInputConditionInput
+  ) {
+    createOrUpdateInput(input: $input, condition: $condition) {
       id
       question
       answer
