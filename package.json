@@ -18,6 +18,8 @@
         "@aws-cdk/aws-appsync": "^1.204.0",
         "@aws-cdk/core": "^1.204.0",
         "aws-amplify": "^5.3.3",
+        "markdown-it": "^13.0.1",
+        "vite-raw-plugin": "^1.0.2",
         "vue": "^3.3.4",
         "vue-router": "^4.2.4"
     },
