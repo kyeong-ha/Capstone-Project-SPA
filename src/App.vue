@@ -6,7 +6,7 @@
 
 <script setup>
 import { Input } from './assets/js/init-input.js';
-import { MBTI } from './assets/js/init-mbti.js';
+// import { MBTI } from './assets/js/init-mbti.js';
 import { questions, mbtis } from './assets/js/md-to-array';
 
 // Initialize a Input (Question field and ID field)
@@ -17,11 +17,11 @@ questions.forEach((question, id) => {
 });
 
 // Initialize a MBTI
-for(let i=0; i<mbtis.length; i++){
-    MBTI.data.mbti = mbtis[i*3],
-    MBTI.data.type = mbtis[i*3+1],
-    MBTI.data.mind = mbtis[i*3+2]
-    MBTI.methods.createMBTI();
-}
+// for(let i=0; i<mbtis.length; i++){
+//     MBTI.data.mbti = mbtis[i*3],
+//     MBTI.data.type = mbtis[i*3+1],
+//     MBTI.data.mind = mbtis[i*3+2]
+//     MBTI.methods.createMBTI();
+// }
 
 </script>
