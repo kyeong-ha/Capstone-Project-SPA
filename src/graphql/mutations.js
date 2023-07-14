@@ -130,3 +130,22 @@ export const createOrUpdateInput = /* GraphQL */ `
     }
   }
 `;
+export const createOrUpdateMBTI = /* GraphQL */ `
+  mutation CreateOrUpdateMBTI(
+    $input: MBTIArgs!
+    $condition: ModelMBTIConditionInput
+  ) {
+    createOrUpdateMBTI(input: $input, condition: $condition) {
+      id
+      mbti
+      mind
+      type
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
+  }
+`;

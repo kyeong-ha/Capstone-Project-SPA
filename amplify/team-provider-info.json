@@ -17,7 +17,11 @@
         "myAuth": {}
       },
       "function": {
-        "isExistqId": {}
+        "isExistqId": {},
+        "mbtiClassifier": {
+          "deploymentBucketName": "amplify-mymbti-dev-20303-deployment",
+          "s3Key": "amplify-builds/mbtiClassifier-3774344e2f474a426a4e-build.zip"
+        }
       },
       "api": {
         "mymbti": {}
