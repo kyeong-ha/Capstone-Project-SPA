@@ -1,6 +1,5 @@
 import json
 import boto3
-from boto3.dynamodb.conditions import Key
 
 import numpy as np
 
@@ -24,9 +23,18 @@ client = boto3.client('dynamodb')
 def lambda_handler(event, context):
     input_answers = []
     for i in range(0, 10):
-        input_answers.append(str(client.query(
+        answer = client.query(
             TableName='Input-ctmepefwojhwlf2mhhohuiu6rq-dev',
-            KeyConditionExpression=Key('id').eq(str(i)))['Items']['answer']))
+            KeyConditionExpression='#name = :value',
+            ExpressionAttributeValues={
+                ':value': {
+                    'S': str(i)
+                }
+            },
+            ExpressionAttributeNames={
+                '#name': 'id'
+            })['Items'][0]['answer']['S']
+        input_answers.append(answer)
     
     classifier_pred = {}
 
@@ -40,8 +48,6 @@ def lambda_handler(event, context):
     t5 = T5Model.from_pretrained("t5-base")
     model = xgboost_model.MBTIClassifierT5(t5.config)
     model.load_t5(t5.state_dict())
-
-    # dataloader = DataLoader(feature_data)
 
     features = []
 
@@ -83,7 +89,6 @@ def lambda_handler(event, context):
         for pred, prob in zip(pred_label, pred_prob):
             confidence = prob[pred] * 100
             classifier_pred[classifier_name] = prob[pred] * 100
-            # print(f"{classifier_name} - Confidence: {confidence:.2f}%")
 
     pred = str(ei_pred[0]) + str(ns_pred[0]) + str(tf_pred[0]) + str(pj_pred[0])
     mbti_dict = {
@@ -105,13 +110,7 @@ def lambda_handler(event, context):
         "1111": "ISFJ",
     }
     
-    # print(classifier_pred)
-    # print(mbti_dict[pred])
     classifier_pred['mbti'] = mbti_dict[pred]
-    classifier_pred['answers'] = input_answers
-    # return classifier_pred
-    # for el in classifier_pred:
-    #     print(el)
     
     return {
         'statusCode': 200,

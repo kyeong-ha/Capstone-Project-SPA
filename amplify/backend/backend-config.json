@@ -48,48 +48,6 @@
       "service": "Cognito"
     }
   },
-  "function": {
-    "mbtiClassifier": {
-      "build": true,
-      "dependsOn": [
-        {
-          "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput",
-            "GraphQLAPIKeyOutput"
-          ],
-          "category": "api",
-          "resourceName": "mymbti"
-        },
-        {
-          "attributes": [
-            "UserPoolId"
-          ],
-          "category": "auth",
-          "resourceName": "myAuth"
-        }
-      ],
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_mbtiClassifier_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "mbtiClassifier"
-        }
-      ]
-    },
-    "AMPLIFY_function_mbtiClassifier_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "mbtiClassifier"
-        }
-      ]
-    }
-  },
+  "function": {},
   "storage": {}
 }
