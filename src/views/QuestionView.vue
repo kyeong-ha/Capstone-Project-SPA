@@ -42,7 +42,7 @@ export default {
                     // console.log('next Input: ', this.id, this.question, this.answer);
                 }).catch((err) => console.error(err));
             }else {
-                axios.get('https://flklsmnbua.execute-api.ap-northeast-2.amazonaws.com/classifier', {})
+                axios.get(' https://yg1l81qm3i.execute-api.ap-northeast-2.amazonaws.com/classifier/proxy', {})
                 .then((res) => {
                     console.log('success!', res)
                     if(res.data.id == 'result')
