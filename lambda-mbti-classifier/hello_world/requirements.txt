@@ -1,0 +1,5 @@
+requests
+transformers
+sentencepiece
+xgboost==1.6.0
+scikit-learn
