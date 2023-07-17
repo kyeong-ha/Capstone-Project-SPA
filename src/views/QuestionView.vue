@@ -45,8 +45,7 @@ export default {
                 axios.get(' https://yg1l81qm3i.execute-api.ap-northeast-2.amazonaws.com/classifier/proxy', {})
                 .then((res) => {
                     console.log('success!', res)
-                    if(res.data.id == 'result')
-                        this.$router.push({ name: 'ResultPage', params: { mbti: res.body.mbti, ei: res.body.EI , ns: res.data.NS, tf: res.data.tf, pj: res.data.PJ }});
+                    this.$router.push({ name: 'ResultPage', params: { mbti: res.body.mbti, ei: res.body.EI , ns: res.data.NS, tf: res.data.tf, pj: res.data.PJ }});
                 })
                 .catch((error) => {
                     console.log(error)
