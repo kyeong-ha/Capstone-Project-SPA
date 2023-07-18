@@ -48,6 +48,64 @@
       "service": "Cognito"
     }
   },
-  "function": {},
+  "function": {
+    "getMbtiElements": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "mymbti"
+        },
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "myAuth"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_getMbtiElements_accessKeyId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getMbtiElements"
+        }
+      ]
+    },
+    "AMPLIFY_function_getMbtiElements_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getMbtiElements"
+        }
+      ]
+    },
+    "AMPLIFY_function_getMbtiElements_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getMbtiElements"
+        }
+      ]
+    },
+    "AMPLIFY_function_getMbtiElements_secretAccessKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getMbtiElements"
+        }
+      ]
+    }
+  },
   "storage": {}
 }

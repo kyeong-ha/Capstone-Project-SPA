@@ -1,4 +1,5 @@
 import './assets/main.css'
+import store from "./store/index.js";
 
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -14,4 +15,5 @@ const app = createApp(App)
 // app.config.isCustomElement = tag => tag.startsWith('amplify-');
 
 app.use(router)
+app.use(store)
 app.mount('#app')

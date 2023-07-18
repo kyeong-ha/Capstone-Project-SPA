@@ -12,9 +12,14 @@ import { API } from 'aws-amplify';
 import { createOrUpdateInput } from '../graphql/mutations';
 import { questions } from '../assets/js/md-to-array';
 import axios from 'axios';
+import { mapMutations, mapGetters } from 'vuex';
 
+/* eslint-disable */
 export default {
-    name: 'App',
+    name: 'question',
+    computed: {
+            ...mapGetters(['mbti', 'ei', 'ns', 'tf', 'pj'])
+    },
     data: function() {
         return {
             id: 0,
@@ -23,6 +28,9 @@ export default {
         };
     },
     methods: {
+        ...mapMutations({
+            updateVal: "UPDATE_VAL",
+        }),
         async createAnswer(){
             if(this.id < 9){
                 await API.graphql({
@@ -41,11 +49,14 @@ export default {
                     this.answer = '';
                     // console.log('next Input: ', this.id, this.question, this.answer);
                 }).catch((err) => console.error(err));
-            }else {
+            }
+            else {
                 axios.get(' https://yg1l81qm3i.execute-api.ap-northeast-2.amazonaws.com/classifier/proxy', {})
                 .then((res) => {
-                    console.log('success!', res)
-                    this.$router.push({ name: 'ResultPage', params: { mbti: res.body.mbti, ei: res.body.EI , ns: res.data.NS, tf: res.data.tf, pj: res.data.PJ }});
+                    // console.log('success!', res)
+                    const params = { mbti: res.data.mbti, ei: res.data.EI , ns: res.data.NS, tf: res.data.TF, pj: res.data.PJ };
+                    this.updateVal(params);
+                    this.$router.push({ name: 'result' });
                 })
                 .catch((error) => {
                     console.log(error)

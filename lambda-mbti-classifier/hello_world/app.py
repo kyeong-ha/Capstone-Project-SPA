@@ -113,6 +113,9 @@ def lambda_handler(event, context):
     classifier_pred['mbti'] = mbti_dict[pred]
     
     return {
-        'statusCode': 200,
-        'body': json.dumps(classifier_pred)
+        'statusCode': str(200),
+        'body': json.dumps(classifier_pred),
+        'headers': {
+            'Access-Control-Allow-Origin': '*'
+        }
     }

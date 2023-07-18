@@ -1,0 +1,44 @@
+{
+  "permissions": {
+    "api": {
+      "mymbti": [
+        "Query",
+        "Mutation",
+        "Subscription"
+      ]
+    },
+    "auth": {
+      "myAuth": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    },
+    "storage": {
+      "MBTI:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "Input:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "accessKeyId",
+      "environmentVariableName": "ACCESS_KEY_ID"
+    },
+    {
+      "cloudFormationParameterName": "secretAccessKey",
+      "environmentVariableName": "SECRET_ACCESS_KEY"
+    }
+  ]
+}
