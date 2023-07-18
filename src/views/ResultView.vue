@@ -20,7 +20,7 @@ import { mapGetters } from 'vuex';
     export default {
         name: 'result',
         computed: {
-          ...mapGetters(['mbti', 'ei', 'ns', 'tf', 'pj']),
+          ...mapGetters(['mbti', 'ei', 'ns', 'tf', 'pj', 'type', 'mind']),
           getMBTI() { return this.$store.state.mbti; },
           getEI() { return this.$store.state.ei; },
           getNS() { return this.$store.state.ns; },
@@ -28,6 +28,6 @@ import { mapGetters } from 'vuex';
           getPJ() { return this.$store.state.pj; },
           getMind() { return this.$store.state.mind; },
           getType() { return this.$store.state.type; }
-        },
+        }
     }
 </script>

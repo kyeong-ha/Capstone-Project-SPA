@@ -13,6 +13,7 @@ import { createOrUpdateInput } from '../graphql/mutations';
 import { questions } from '../assets/js/md-to-array';
 import axios from 'axios';
 import { mapMutations, mapGetters } from 'vuex';
+import { getMbtiElements } from '../graphql/queries';
 
 /* eslint-disable */
 export default {
@@ -43,20 +44,23 @@ export default {
                         }
                     }
                 }).then((res) => {
-                    console.log('new Input: ', res);
                     this.id = Number(res.data.createOrUpdateInput.id)+1;
                     this.question = questions[this.id];
                     this.answer = '';
-                    // console.log('next Input: ', this.id, this.question, this.answer);
                 }).catch((err) => console.error(err));
             }
             else {
                 axios.get(' https://yg1l81qm3i.execute-api.ap-northeast-2.amazonaws.com/classifier/proxy', {})
                 .then((res) => {
-                    // console.log('success!', res)
                     const params = { mbti: res.data.mbti, ei: res.data.EI , ns: res.data.NS, tf: res.data.TF, pj: res.data.PJ };
-                    this.updateVal(params);
-                    this.$router.push({ name: 'result' });
+                    
+                    API.graphql({ query: getMbtiElements, variables: { mbti: res.data.mbti } })
+                    .then((res_) => {
+                        params.type = res_.data.getMbtiElements.type;
+                        params.mind = res_.data.getMbtiElements.mind;
+                        this.updateVal(params);
+                        this.$router.push({ name: 'result' });
+                    });
                 })
                 .catch((error) => {
                     console.log(error)

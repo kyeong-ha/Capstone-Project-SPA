@@ -20,7 +20,7 @@
         "isExistqId": {},
         "getMbtiElements": {
           "deploymentBucketName": "amplify-mymbti-dev-20303-deployment",
-          "s3Key": "amplify-builds/getMbtiElements-63446b6f566e4b495247-build.zip",
+          "s3Key": "amplify-builds/getMbtiElements-4559526e6a3149356842-build.zip",
           "accessKeyId": "AKIA2KHUM2R2U6BNNBSW",
           "secretAccessKey": "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"
         }

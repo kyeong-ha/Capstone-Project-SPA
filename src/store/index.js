@@ -1,32 +1,13 @@
 import { createApp } from 'vue'
 import App from '../App.vue'
-import Vuex from 'vuex';
+import Vuex from 'vuex'
 import createPersistedState from "vuex-persistedstate"
 
+
 const app = createApp(App)
-app.use(Vuex);
+app.use(Vuex)
 
-function getMBTIelements(mbti){
-    let ddb_params = {
-        ExpressionAttributeValues: {
-            ':s': {S: '0'},
-            ':mbti' : {S: mbti}
-        },
-        KeyConditionExpression: 'id >= :s',
-        ProjectionExpression: 'type, mind',
-        FilterExpression: 'contains (mbti, :mbti)',
-        TableName: 'MBTI-ctmepefwojhwlf2mhhohuiu6rq-dev'
-    };
 
-    ddb.query(ddb_params, function(err, data) {
-        if (err) {
-            console.log("Error", err);
-        } else {
-            console.log("Success", data.Items);
-            return { type: data.Items.type, mind: data.Items.mind };
-        }
-    });
-}
 
 export default new Vuex.Store({
     plugins: [createPersistedState()],
@@ -40,16 +21,15 @@ export default new Vuex.Store({
         mind: null
     },
     mutations: {
-        UPDATE_VAL(state, params) {
+        async UPDATE_VAL(state, params) {
             state.mbti = params.mbti;
             state.ei = params.ei;
             state.ns = params.ns;
             state.tf = params.tf;
             state.pj = params.pj;
 
-            const mbtiElement = getMBTIelements(params.mbti);
-            state.type = mbtiElement.type;
-            state.mind = mbtiElement.mind;
+            state.type = params.type;
+            state.mind = params.mind;
         }
     },
     getters: {

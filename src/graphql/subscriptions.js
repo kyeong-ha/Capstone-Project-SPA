@@ -4,7 +4,6 @@
 export const onCreateMBTI = /* GraphQL */ `
   subscription OnCreateMBTI($filter: ModelSubscriptionMBTIFilterInput) {
     onCreateMBTI(filter: $filter) {
-      id
       mbti
       mind
       type
@@ -20,7 +19,6 @@ export const onCreateMBTI = /* GraphQL */ `
 export const onUpdateMBTI = /* GraphQL */ `
   subscription OnUpdateMBTI($filter: ModelSubscriptionMBTIFilterInput) {
     onUpdateMBTI(filter: $filter) {
-      id
       mbti
       mind
       type
@@ -36,7 +34,6 @@ export const onUpdateMBTI = /* GraphQL */ `
 export const onDeleteMBTI = /* GraphQL */ `
   subscription OnDeleteMBTI($filter: ModelSubscriptionMBTIFilterInput) {
     onDeleteMBTI(filter: $filter) {
-      id
       mbti
       mind
       type

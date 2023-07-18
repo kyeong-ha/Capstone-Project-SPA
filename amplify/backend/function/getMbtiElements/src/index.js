@@ -25,29 +25,19 @@ AWS.config.update({
 });
 
 const docClient = new AWS.DynamoDB.DocumentClient();
-const MBTI_LENGTH = 16;
 
 exports.handler = async (event) => {
-    let i = 0;
-
-    while(i <= MBTI_LENGTH){
-        let params = {
-            TableName: 'MBTI-ctmepefwojhwlf2mhhohuiu6rq-dev',
-            KeyConditionExpression: '#key = :value',
-            ExpressionAttributeNames: { '#key': 'id' },
-            ExpressionAttributeValues: { ':value': i.toString(), ':mbtiValue': event.mbti },
-            FilterExpression: 'contains (mbti, :mbtiValue)',
-        };
-
-        try {
-            const data = await docClient.query(params).promise()
-            if(data.Count == 0) i++;
-            else return { 
-                statusCode: 200,
-                body: JSON.stringify(data.Items)
-            }
-        } catch (err) {
-            console.error(err);
-        }
+    let params = {
+        TableName: 'MBTI-ctmepefwojhwlf2mhhohuiu6rq-dev',
+        KeyConditionExpression: '#key = :value',
+        ExpressionAttributeNames: { '#key': 'id' },
+        ExpressionAttributeValues: { ':value': event.arguments.mbti },
+        // FilterExpression: 'contains (mbti, :mbtiValue)',
+    };
+    try {
+        const data = await docClient.query(params).promise()
+        return data.Items[0];
+    } catch (err) {
+        console.error(err);
     }
 };

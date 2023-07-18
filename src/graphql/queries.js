@@ -1,10 +1,18 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getMbtiElements = /* GraphQL */ `
+  query GetMbtiElements($mbti: ID!) {
+    getMbtiElements(mbti: $mbti) {
+      mind
+      type
+      __typename
+    }
+  }
+`;
 export const getMBTI = /* GraphQL */ `
   query GetMBTI($id: ID!) {
     getMBTI(id: $id) {
-      id
       mbti
       mind
       type
@@ -25,7 +33,6 @@ export const listMBTIS = /* GraphQL */ `
   ) {
     listMBTIS(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
-        id
         mbti
         mind
         type
@@ -56,7 +63,6 @@ export const syncMBTIS = /* GraphQL */ `
       lastSync: $lastSync
     ) {
       items {
-        id
         mbti
         mind
         type

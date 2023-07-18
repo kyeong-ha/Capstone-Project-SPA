@@ -7,7 +7,6 @@ export const createMBTI = /* GraphQL */ `
     $condition: ModelMBTIConditionInput
   ) {
     createMBTI(input: $input, condition: $condition) {
-      id
       mbti
       mind
       type
@@ -26,7 +25,6 @@ export const updateMBTI = /* GraphQL */ `
     $condition: ModelMBTIConditionInput
   ) {
     updateMBTI(input: $input, condition: $condition) {
-      id
       mbti
       mind
       type
@@ -45,7 +43,6 @@ export const deleteMBTI = /* GraphQL */ `
     $condition: ModelMBTIConditionInput
   ) {
     deleteMBTI(input: $input, condition: $condition) {
-      id
       mbti
       mind
       type
@@ -136,7 +133,6 @@ export const createOrUpdateMBTI = /* GraphQL */ `
     $condition: ModelMBTIConditionInput
   ) {
     createOrUpdateMBTI(input: $input, condition: $condition) {
-      id
       mbti
       mind
       type
